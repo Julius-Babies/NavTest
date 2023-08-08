@@ -8,13 +8,18 @@
     <fragment
         android:id="@+id/deviceFragment"
         android:name="de.babiesjulius.navtest.DeviceFragment"
-        android:label="fragment_device"
-        tools:layout="@layout/fragment_device" />
+        android:label="@string/devices"
+        tools:layout="@layout/fragment_device">
+        <argument
+            android:name="ShowAppBar"
+            android:defaultValue="true"
+            app:argType="boolean" />
+    </fragment>
 
     <fragment
         android:id="@+id/homeFragment"
         android:name="de.babiesjulius.navtest.HomeFragment"
-        android:label="fragment_home"
+        android:label="@string/home"
         tools:layout="@layout/fragment_home">
         <action
             android:id="@+id/action_homeFragment_to_deviceFragment"
@@ -23,5 +28,27 @@
             app:exitAnim="@android:anim/fade_out"
             app:popEnterAnim="@android:anim/fade_in"
             app:popExitAnim="@android:anim/fade_out" />
+        <argument
+            android:name="ShowAppBar"
+            android:defaultValue="true"
+            app:argType="boolean" />
+        <action
+            android:id="@+id/action_homeFragment_to_settingsFragment"
+            app:destination="@id/settingsFragment" />
     </fragment>
+    <fragment
+        android:id="@+id/automationFragment"
+        android:name="de.babiesjulius.navtest.AutomationFragment"
+        android:label="@string/automations"
+        tools:layout="@layout/fragment_automation">
+        <argument
+            android:name="ShowAppBar"
+            android:defaultValue="true"
+            app:argType="boolean" />
+    </fragment>
+    <fragment
+        android:id="@+id/settingsFragment"
+        android:name="de.babiesjulius.navtest.SettingsFragment"
+        android:label="@string/settings"
+        tools:layout="@layout/fragment_settings" />
 </navigation>
